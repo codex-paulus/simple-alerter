@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form action="/channel/create" method="POST">
+    <div class="form-group">
+        <label for="name">Channel Name</label>
+        <input id="name" type="text" class="form-control" name="channel">
+    </div>
+    <div class="form-group">
+        <label for="recipient">Recipient</label>
+        <input id="recipient" type="email" class="form-control" name="recipient">
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>
+
+{% if success %}
+<p class="text-success">{{ success }}</p>
+{% endif %}
+{% if error %}
+<p class="text-danger">{{ error }}</p>
+{% endif %}
+
+{% endblock %}
